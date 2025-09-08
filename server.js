@@ -5,6 +5,9 @@ import { createClient } from "@supabase/supabase-js";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
+});
 
 // اتصال به Supabase با متغیرهای Railway
 const supabase = createClient(
